@@ -8,7 +8,7 @@ tags:
 - multimodal
 - vision-language
 - audio
-- qwen3-omni
+- zen-omni
 - hanzo
 base_model: Qwen/Qwen3-Omni
 library_name: transformers
@@ -123,7 +123,7 @@ This model is based on the excellent work by the Qwen team on [Qwen3-Omni](https
 If you use this model, please cite both:
 
 ```bibtex
-@article{qwen3-omni,
+@article{zen-omni,
   title={Qwen3-Omni: A Unified Multimodal Model},
   author={Qwen Team},
   year={2024}

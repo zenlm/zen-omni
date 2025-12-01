@@ -57,7 +57,7 @@ pipeline_tag: text-generation
 tags:
 - zen
 - hanzo-ai
-- qwen2
+- zen2
 - omni
 ---
 

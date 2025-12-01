@@ -11,7 +11,7 @@ pipeline_tag: any-to-any
 
 # Qwen3-Omni
 
-<a href="https://chat.qwen.ai/" target="_blank" style="margin: 2px;">
+<a href="https://chat.zen.ai/" target="_blank" style="margin: 2px;">
     <img alt="Chat" src="https://img.shields.io/badge/%F0%9F%92%9C%EF%B8%8F%20Qwen%20Chat%20-536af5" style="display: inline-block; vertical-align: middle;"/>
 </a>
 
@@ -201,7 +201,7 @@ pip install accelerate
 We offer a toolkit to help you handle various types of audio and visual input more conveniently, providing an API-like experience. This includes support for base64, URLs, and interleaved audio, images, and videos. You can install it using the following command and make sure your system has `ffmpeg` installed:
 
 ```bash
-pip install qwen-omni-utils -U
+pip install zen-omni-utils -U
 ```
 
 Additionally, we recommend using FlashAttention 2 when running with Hugging Face Transformers to reduce GPU memory usage. However, if you are primarily using [vLLM](#vllm-usage) for inference, this installation is not necessary, as vLLM includes FlashAttention 2 by default.
@@ -214,13 +214,13 @@ Also, you should have hardware that is compatible with FlashAttention 2. Read mo
 
 #### Code Snippet
 
-Here is a code snippet to show you how to use Qwen3-Omni with `transformers` and `qwen_omni_utils`:
+Here is a code snippet to show you how to use Qwen3-Omni with `transformers` and `zen_omni_utils`:
 
 ```python
 import soundfile as sf
 
 from transformers import Qwen3OmniMoeForConditionalGeneration, Qwen3OmniMoeProcessor
-from qwen_omni_utils import process_mm_info
+from zen_omni_utils import process_mm_info
 
 MODEL_PATH = "Qwen/Qwen3-Omni-30B-A3B-Instruct"
 # MODEL_PATH = "Qwen/Qwen3-Omni-30B-A3B-Thinking"
@@ -287,7 +287,7 @@ The model can batch inputs composed of mixed samples of various types such as te
 
 ```python
 from transformers import Qwen3OmniMoeForConditionalGeneration, Qwen3OmniMoeProcessor
-from qwen_omni_utils import process_mm_info
+from zen_omni_utils import process_mm_info
 
 MODEL_PATH = "Qwen/Qwen3-Omni-30B-A3B-Instruct"
 # MODEL_PATH = "Qwen/Qwen3-Omni-30B-A3B-Thinking"
@@ -445,7 +445,7 @@ text_ids, audio = model.generate(..., speaker="Aiden")
 We strongly recommend using vLLM for inference and deployment of the Qwen3-Omni series models. Since our code is currently in the pull request stage, and **audio output inference support for the Instruct model will be released in the near future**, you can follow the commands below to install vLLM from source. Please note that we recommend you **create a new Python environment** to avoid runtime environment conflicts and incompatibilities. For more details on compiling vLLM from source, please refer to the [vLLM official documentation](https://docs.vllm.ai/en/latest/getting_started/installation/gpu.html#set-up-using-python-only-build-without-compilation).
 
 ```bash
-git clone -b qwen3_omni https://github.com/wangxiongts/vllm.git
+git clone -b zen_omni https://github.com/wangxiongts/vllm.git
 cd vllm
 pip install -r requirements/build.txt
 pip install -r requirements/cuda.txt
@@ -455,7 +455,7 @@ VLLM_USE_PRECOMPILED=1 pip install -e . -v --no-build-isolation
 # Install the Transformers
 pip install git+https://github.com/huggingface/transformers
 pip install accelerate
-pip install qwen-omni-utils -U
+pip install zen-omni-utils -U
 pip install -U flash-attn --no-build-isolation
 ```
 
@@ -469,7 +469,7 @@ import torch
 
 from vllm import LLM, SamplingParams
 from transformers import Qwen3OmniMoeProcessor
-from qwen_omni_utils import process_mm_info
+from zen_omni_utils import process_mm_info
 
 if __name__ == '__main__':
     # vLLM engine v1 not supported yet
@@ -545,7 +545,7 @@ import torch
 
 from vllm import LLM, SamplingParams
 from transformers import Qwen3OmniMoeProcessor
-from qwen_omni_utils import process_mm_info
+from zen_omni_utils import process_mm_info
 
 def build_input(processor, messages, use_audio_in_video):
     text = processor.apply_chat_template(

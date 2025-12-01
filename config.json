@@ -4,7 +4,7 @@
     "Qwen3OmniForConditionalGeneration"
   ],
   "base_model": "Qwen3-Omni",
-  "model_type": "qwen3-omni",
+  "model_type": "zen-omni",
   "multimodal": true,
   "supported_modalities": ["text", "image", "audio"],
   "vocab_size": 151936,

@@ -3,7 +3,7 @@ import torch
 from argparse import ArgumentParser
 
 import gradio as gr
-from qwen_omni_utils import process_mm_info
+from zen_omni_utils import process_mm_info
 from transformers import Qwen3OmniMoeProcessor
 
 os.environ['VLLM_USE_V1'] = '0'

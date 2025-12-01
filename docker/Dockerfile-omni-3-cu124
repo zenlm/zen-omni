@@ -1,4 +1,4 @@
-# Dockerfile of qwenllm/qwen3-omni:3-cu124
+# Dockerfile of zenllm/zen-omni:3-cu124
 
 ARG CUDA_VERSION=12.4.0
 ARG from=nvidia/cuda:${CUDA_VERSION}-devel-ubuntu22.04
@@ -59,7 +59,7 @@ RUN --mount=type=cache,target=/root/.cache/ccache \
     if [ "$BUNDLE_VLLM" = "true" ]; then \
     mkdir -p /data/shared/code \
         && cd /data/shared/code \
-        && git clone -b qwen3_omni https://github.com/wangxiongts/vllm.git \
+        && git clone -b zen_omni https://github.com/wangxiongts/vllm.git \
         && cd vllm \
         && pip3 install -r requirements/build.txt \
         && pip3 install -r requirements/cuda.txt \
@@ -77,7 +77,7 @@ RUN --mount=type=cache,target=/root/.cache/ccache \
     fi
 
 RUN --mount=type=cache,target=/root/.cache/pip pip3 install networkx==3.4.2
-RUN --mount=type=cache,target=/root/.cache/pip pip3 install accelerate==1.10.1 qwen-omni-utils huggingface_hub[cli] modelscope_studio modelscope
+RUN --mount=type=cache,target=/root/.cache/pip pip3 install accelerate==1.10.1 zen-omni-utils huggingface_hub[cli] modelscope_studio modelscope
 
 RUN --mount=type=cache,target=/root/.cache/pip \
     pip3 install \

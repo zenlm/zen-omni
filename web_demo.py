@@ -12,7 +12,7 @@ import numpy as np
 import soundfile as sf
 
 from gradio_client import utils as client_utils
-from qwen_omni_utils import process_mm_info
+from zen_omni_utils import process_mm_info
 from transformers import Qwen3OmniMoeProcessor
 
 
