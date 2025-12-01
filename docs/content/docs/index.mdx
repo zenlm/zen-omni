@@ -1,0 +1,65 @@
+---
+title: zen-omni Documentation  
+description: Multimodal AI model based on Qwen3-Omni supporting text, vision, and audio
+---
+
+# zen-omni
+
+**Multimodal AI for everyone**
+
+zen-omni is a groundbreaking multimodal model based on Qwen3-Omni that understands text, images, and audio simultaneously.
+
+## Quick Links
+
+- [Introduction](/docs/introduction) - Learn about zen-omni
+- [GitHub](https://github.com/zenlm/zen-omni) - Source code
+- [HuggingFace](https://huggingface.co/zenlm/zen-omni) - Download model
+
+## Key Features
+
+### 🎯 Multimodal Understanding
+Process text, images, and audio in a unified model
+
+### 🚀 High Performance
+Optimized for efficient inference on various hardware
+
+### 🔒 Privacy-First
+100% local processing - no cloud, no telemetry
+
+### 🌱 Eco-Friendly
+95% less energy than cloud AI solutions
+
+## Quick Start
+
+```python
+from transformers import AutoModelForCausalLM, AutoProcessor
+
+# Load model
+model = AutoModelForCausalLM.from_pretrained("zenlm/zen-omni")
+processor = AutoProcessor.from_pretrained("zenlm/zen-omni")
+
+# Process multimodal inputs
+inputs = processor(
+    text="What's in this image?",
+    images=image,
+    return_tensors="pt"
+)
+outputs = model.generate(**inputs)
+```
+
+## Technical Specs
+
+| Specification | Value |
+|--------------|-------|
+| Base Model | Qwen3-Omni |
+| Parameters | ~7B |
+| Modalities | Text, Vision, Audio |
+| Context | 32,768 tokens |
+| License | Apache 2.0 |
+
+## Organizations
+
+**Hanzo AI Inc** - Techstars '17 • Award-winning GenAI lab  
+**Zoo Labs Foundation** - 501(c)(3) • Environmental preservation
+
+Visit [zenlm.org](https://zenlm.org) for more models.

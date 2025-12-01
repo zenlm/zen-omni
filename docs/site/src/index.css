@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%; /* white */
+    --foreground: 0 0% 0%; /* black */
+    
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 0%;
+    
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 0%;
+    
+    --primary: 0 0% 0%; /* black */
+    --primary-foreground: 0 0% 100%; /* white */
+    
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 0%;
+    
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 40%;
+    
+    --accent: 0 0% 96%;
+    --accent-foreground: 0 0% 0%;
+    
+    --destructive: 0 0% 0%;
+    --destructive-foreground: 0 0% 100%;
+    
+    --border: 0 0% 0%;
+    --input: 0 0% 0%;
+    --ring: 0 0% 0%;
+    
+    --radius: 0rem;
+    
+    --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    --font-heading: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    --font-mono: 'SF Mono', Monaco, Inconsolata, 'Fira Code', 'Courier New', monospace;
+  }
+  
+  .dark {
+    --background: 0 0% 0%; /* black */
+    --foreground: 0 0% 100%; /* white */
+    
+    --card: 0 0% 0%;
+    --card-foreground: 0 0% 100%;
+    
+    --popover: 0 0% 0%;
+    --popover-foreground: 0 0% 100%;
+    
+    --primary: 0 0% 100%; /* white */
+    --primary-foreground: 0 0% 0%; /* black */
+    
+    --secondary: 0 0% 10%;
+    --secondary-foreground: 0 0% 100%;
+    
+    --muted: 0 0% 10%;
+    --muted-foreground: 0 0% 60%;
+    
+    --accent: 0 0% 10%;
+    --accent-foreground: 0 0% 100%;
+    
+    --destructive: 0 0% 100%;
+    --destructive-foreground: 0 0% 0%;
+    
+    --border: 0 0% 100%;
+    --input: 0 0% 100%;
+    --ring: 0 0% 100%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-sans);
+    font-feature-settings: "rlig" 1, "calt" 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading uppercase tracking-wide;
+  }
+  
+  .font-heading {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  
+  .font-mono {
+    font-family: var(--font-mono);
+  }
+}
+
+@layer components {
+  .container {
+    @apply mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl;
+  }
+  
+  .btn {
+    @apply inline-flex items-center justify-center px-4 py-2 text-sm font-medium uppercase tracking-wide transition-colors focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none;
+  }
+  
+  .btn-primary {
+    @apply bg-black text-white hover:bg-gray-800;
+  }
+  
+  .btn-outline {
+    @apply border border-black bg-white text-black hover:bg-gray-100;
+  }
+  
+  .card {
+    @apply border border-black bg-white p-6;
+  }
+  
+  .code-block {
+    @apply font-mono text-sm bg-black text-white p-4 overflow-x-auto;
+  }
+  
+  /* Remove all rounded corners for brutalist aesthetic */
+  * {
+    border-radius: 0 !important;
+  }
+  
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: white;
+    border-left: 1px solid black;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: black;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #333;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .animate-in {
+    animation: fadeIn 0.3s ease-in-out;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}

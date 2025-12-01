@@ -1,0 +1,105 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Pure black and white */
+    --background: 255 255 255;
+    --foreground: 0 0 0;
+    --border: 0 0 0;
+    --muted: 250 250 250;
+    --accent: 0 0 0;
+  }
+
+  * {
+    @apply border-black;
+    border-radius: 0 !important;
+  }
+
+  body {
+    @apply bg-white text-black;
+    @apply font-sans antialiased;
+  }
+
+  /* Black scrollbar */
+  ::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-white border-l border-black;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-black;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-gray-800;
+  }
+
+  /* Typography */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold uppercase tracking-wide;
+  }
+
+  /* Code blocks */
+  pre, code {
+    @apply font-mono bg-black text-white p-1;
+  }
+
+  /* Links */
+  a {
+    @apply underline underline-offset-2 hover:no-underline;
+  }
+
+  /* Selection */
+  ::selection {
+    @apply bg-black text-white;
+  }
+}
+
+@layer components {
+  .container {
+    @apply mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl;
+  }
+
+  .btn {
+    @apply px-6 py-3 font-bold uppercase tracking-wider transition-all duration-200;
+    @apply border-2 border-black;
+    @apply hover:bg-black hover:text-white;
+    @apply focus:outline-none focus:ring-4 focus:ring-black focus:ring-offset-2;
+  }
+
+  .btn-primary {
+    @apply bg-black text-white;
+    @apply hover:bg-white hover:text-black;
+    @apply border-black;
+  }
+
+  .card {
+    @apply bg-white;
+    @apply border-2 border-black;
+    @apply p-6;
+    @apply hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all;
+  }
+
+  .code-block {
+    @apply bg-black text-white;
+    @apply border-2 border-black;
+    @apply p-4 overflow-x-auto;
+    @apply font-mono text-sm;
+  }
+
+  /* Brutalist shadow effect */
+  .brutal-shadow {
+    box-shadow: 4px 4px 0px 0px rgba(0,0,0,1);
+  }
+
+  .brutal-shadow-hover:hover {
+    box-shadow: 8px 8px 0px 0px rgba(0,0,0,1);
+    transform: translate(-2px, -2px);
+  }
+}
