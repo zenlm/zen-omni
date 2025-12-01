@@ -1,0 +1,82 @@
+---
+title: Introduction to zen-omni
+description: Multimodal AI model based on Qwen3-Omni supporting text, vision, and audio
+---
+
+# Introduction to zen-omni
+
+## What is zen-omni?
+
+zen-omni is a multimodal AI model based on Qwen3-Omni architecture that can understand and process text, images, and audio simultaneously. It's part of the Zen LM family of models focused on democratizing AI while protecting our planet.
+
+## Why zen-omni?
+
+### Multimodal Understanding
+
+Unlike text-only models, zen-omni natively supports:
+- **Text** - Natural language understanding and generation
+- **Vision** - Image analysis and visual reasoning
+- **Audio** - Speech recognition and audio understanding
+
+### Based on Qwen3-Omni
+
+zen-omni is built on Qwen3-Omni, a groundbreaking unified multimodal architecture that:
+- Processes multiple modalities simultaneously
+- Enables cross-modal reasoning
+- Provides state-of-the-art performance
+
+### Privacy-First Design
+
+- **100% local processing** - No cloud required
+- **No telemetry** - Your data stays on your device
+- **Open source** - Apache 2.0 licensed
+- **Free forever** - No premium tiers or API fees
+
+### Environmentally Responsible
+
+- 95% less energy than cloud AI
+- Optimized for efficient inference
+- Carbon-negative operations through Zoo Labs Foundation
+
+## Key Features
+
+- 🎯 **Text Generation** - High-quality natural language
+- 🖼️ **Image Understanding** - Visual question answering
+- 🎙️ **Voice Interaction** - Speech-to-speech capabilities
+- 💬 **Multimodal Chat** - Process mixed inputs seamlessly
+- 🌍 **Multilingual** - Strong performance across languages
+
+## Technical Specifications
+
+| Specification | Value |
+|--------------|-------|
+| Base Model | Qwen3-Omni |
+| Parameters | ~7B |
+| Modalities | Text, Vision, Audio |
+| Context Length | 32,768 tokens |
+| License | Apache 2.0 |
+
+## Get Started
+
+```python
+from transformers import AutoModelForCausalLM, AutoProcessor
+
+model = AutoModelForCausalLM.from_pretrained("zenlm/zen-omni")
+processor = AutoProcessor.from_pretrained("zenlm/zen-omni")
+
+# Process multimodal inputs
+inputs = processor(
+    text="What's in this image?",
+    images=image,
+    return_tensors="pt"
+)
+
+outputs = model.generate(**inputs)
+```
+
+## Organizations
+
+**Hanzo AI Inc** - Techstars '17 • Award-winning GenAI lab
+**Zoo Labs Foundation** - 501(c)(3) Non-Profit • Environmental preservation
+
+Visit [zenlm.org](https://zenlm.org) to learn more about the Zen LM family of models.

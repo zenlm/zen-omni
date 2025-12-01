@@ -1,0 +1,45 @@
+{
+  "_name_or_path": "Qwen3-Omni",
+  "architectures": [
+    "Qwen3OmniForConditionalGeneration"
+  ],
+  "base_model": "Qwen3-Omni",
+  "model_type": "qwen3-omni",
+  "multimodal": true,
+  "supported_modalities": ["text", "image", "audio"],
+  "vocab_size": 151936,
+  "hidden_size": 3584,
+  "intermediate_size": 18944,
+  "num_hidden_layers": 28,
+  "num_attention_heads": 28,
+  "num_key_value_heads": 4,
+  "hidden_act": "silu",
+  "max_position_embeddings": 32768,
+  "initializer_range": 0.02,
+  "rms_norm_eps": 1e-06,
+  "use_cache": true,
+  "rope_theta": 1000000.0,
+  "attention_dropout": 0.0,
+  "bos_token_id": 151643,
+  "eos_token_id": 151645,
+  "tie_word_embeddings": false,
+  "torch_dtype": "bfloat16",
+  "transformers_version": "4.45.0",
+  "vision_config": {
+    "hidden_size": 1536,
+    "intermediate_size": 6144,
+    "num_hidden_layers": 24,
+    "num_attention_heads": 16,
+    "image_size": 420,
+    "patch_size": 14,
+    "num_channels": 3
+  },
+  "audio_config": {
+    "hidden_size": 1024,
+    "intermediate_size": 4096,
+    "num_hidden_layers": 12,
+    "num_attention_heads": 16,
+    "num_mel_bins": 128,
+    "max_source_positions": 3000
+  }
+}
