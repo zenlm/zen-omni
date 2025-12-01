@@ -78,7 +78,7 @@ context_length: 32768
 ## Citation
 
 ```bibtex
-@article{qwen3-omni,
+@article{zen-omni,
   title={Qwen3-Omni: Unified Multimodal Intelligence},
   author={Qwen Team},
   year={2024}
