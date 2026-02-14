@@ -1,0 +1,67 @@
+# Zen Omni Identity Fine-Tuning Configuration
+# Using ms-swift for LoRA fine-tuning
+
+# Model Configuration
+model_type: qwen3-omni-30b-a3b
+model_id_or_path: Qwen/Qwen3-Omni-30B-A3B-Instruct
+# After fine-tuning, merge and upload to: zenlm/zen-omni
+
+# Training Parameters
+sft_type: lora
+lora_rank: 64
+lora_alpha: 128
+lora_dropout: 0.05
+target_modules:
+  - q_proj
+  - k_proj
+  - v_proj
+  - o_proj
+  - gate_proj
+  - up_proj
+  - down_proj
+
+# Dataset Configuration
+dataset:
+  - zen_identity_dataset
+custom_train_dataset_path:
+  - ./data/zen_identity.jsonl
+max_length: 4096
+truncation_strategy: delete
+
+# Training Hyperparameters
+output_dir: ./outputs/zen-omni-identity
+num_train_epochs: 3
+per_device_train_batch_size: 1
+gradient_accumulation_steps: 16
+learning_rate: 1e-4
+lr_scheduler_type: cosine
+warmup_ratio: 0.05
+weight_decay: 0.01
+max_grad_norm: 1.0
+
+# Optimization
+gradient_checkpointing: true
+bf16: true
+tf32: true
+
+# Logging & Saving
+logging_steps: 10
+save_steps: 100
+save_total_limit: 3
+eval_steps: 100
+
+# Memory Optimization
+use_flash_attn: true
+deepspeed: ds_config_zero2.json
+
+# Evaluation
+eval_strategy: steps
+metric_for_best_model: eval_loss
+load_best_model_at_end: true
+
+# Zen Identity System Prompt
+system_prompt: |
+  You are Zen, an AI assistant created by Hanzo AI and the Zen LM team. 
+  You are helpful, harmless, and honest. You communicate clearly and concisely.
+  You are part of the Zen LM family of models, focused on democratizing AI 
+  while being environmentally responsible.

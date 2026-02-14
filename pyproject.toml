@@ -1,0 +1,102 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "zen-omni"
+version = "0.1.0"
+description = "Hypermodal Language Model for Translation + Audio Generation"
+readme = "README.md"
+license = "Apache-2.0"
+authors = [
+    { name = "Zen LM Team", email = "hello@zenlm.org" },
+    { name = "Hanzo AI", email = "hello@hanzo.ai" },
+]
+keywords = [
+    "multimodal",
+    "translation",
+    "speech",
+    "audio",
+    "vision",
+    "language-model",
+    "dubbing",
+    "lip-sync",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: Apache Software License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Multimedia :: Sound/Audio :: Speech",
+    "Topic :: Multimedia :: Video",
+]
+requires-python = ">=3.10"
+dependencies = [
+    "torch>=2.0.0",
+    "transformers>=4.40.0",
+    "numpy>=1.24.0",
+    "soundfile>=0.12.0",
+    "librosa>=0.10.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-asyncio>=0.21.0",
+    "black>=23.0.0",
+    "ruff>=0.1.0",
+]
+training = [
+    "ms-swift>=2.0.0",
+    "deepspeed>=0.13.0",
+    "accelerate>=0.27.0",
+]
+dubbing = [
+    "opencv-python>=4.8.0",
+    "pyyaml>=6.0",
+]
+all = [
+    "zen-omni[dev,training,dubbing]",
+]
+
+[project.urls]
+Homepage = "https://zenlm.org"
+Documentation = "https://docs.zenlm.org/zen-omni"
+Repository = "https://github.com/zenlm/zen-omni"
+Issues = "https://github.com/zenlm/zen-omni/issues"
+HuggingFace = "https://huggingface.co/zenlm/zen-omni"
+
+[project.scripts]
+zen-omni = "zen_omni.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/zen_omni"]
+
+[tool.hatch.build.targets.sdist]
+include = [
+    "src/",
+    "README.md",
+    "LICENSE",
+    "pyproject.toml",
+]
+
+[tool.black]
+line-length = 88
+target-version = ["py310", "py311", "py312"]
+
+[tool.ruff]
+line-length = 88
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "N", "W"]
+ignore = ["E501"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"

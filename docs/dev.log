@@ -1,9 +1,0 @@
-
-> @luxfi/consensus-docs@1.21.0 dev /Users/z/work/lux/consensus/docs
-> next dev --port 3001
-
- ⨯ Failed to load next.config.mjs, see more info here https://nextjs.org/docs/messages/next-config-error
-SyntaxError: The requested module 'fumadocs-mdx/config' does not provide an export named 'default'
-    at <unknown> (next.config.mjs:1)
-[?25h
- ELIFECYCLE  Command failed with exit code 1.
