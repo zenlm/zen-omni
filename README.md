@@ -22,8 +22,8 @@ tags:
 - hanzo
 - thinking
 - instruct
-- qwen3
-base_model: Qwen/Qwen3-Omni-30B-A3B-Instruct
+
+base_model: zenlm/zen-omni
 library_name: transformers
 pipeline_tag: image-text-to-text
 ---
@@ -38,8 +38,8 @@ pipeline_tag: image-text-to-text
 
 | Attribute | Value |
 |-----------|-------|
-| **Base Model** | [Qwen3-Omni-30B-A3B-Instruct](https://huggingface.co/Qwen/Qwen3-Omni-30B-A3B-Instruct) |
-| **Architecture** | `Qwen3OmniMoeForConditionalGeneration` (Thinker-Talker) |
+| **Base Model** | Zen Omni (30B MoE) |
+| **Architecture** | `ZenOmniMoeForConditionalGeneration` (Thinker-Talker) |
 | **Total Parameters** | 30B |
 | **Active Parameters** | 3B (via MoE sparse activation) |
 | **Text Languages** | 119 languages |
@@ -60,7 +60,7 @@ pipeline_tag: image-text-to-text
 
 ## Architecture
 
-Zen Omni is built on Qwen3-Omni's groundbreaking **Thinker-Talker** architecture:
+Zen Omni is built on Zen Omni's groundbreaking **Thinker-Talker** architecture:
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
@@ -125,22 +125,22 @@ Zen Omni is built on Qwen3-Omni's groundbreaking **Thinker-Talker** architecture
 ### Installation
 
 ```bash
-pip install transformers torch qwen-omni-utils soundfile
+pip install transformers torch soundfile
 ```
 
 ### Basic Usage
 
 ```python
-from transformers import Qwen3OmniMoeForConditionalGeneration, Qwen3OmniMoeProcessor
+from transformers import ZenOmniMoeForConditionalGeneration, ZenOmniMoeProcessor
 
 # Load model
 model_id = "zenlm/zen-omni"
-model = Qwen3OmniMoeForConditionalGeneration.from_pretrained(
+model = ZenOmniMoeForConditionalGeneration.from_pretrained(
     model_id,
     torch_dtype="auto",
     device_map="auto"
 )
-processor = Qwen3OmniMoeProcessor.from_pretrained(model_id)
+processor = ZenOmniMoeProcessor.from_pretrained(model_id)
 
 # Text-to-text with thinking
 messages = [
@@ -276,7 +276,7 @@ result.save("output_english_dubbed.mp4")
 
 ## Training
 
-Fine-tuned from Qwen3-Omni-30B-A3B with:
+Fine-tuned from Zen Omni-30B-A3B with:
 - Multimodal instruction tuning
 - Cross-modal alignment
 - Zen AI identity training (LoRA)
@@ -291,7 +291,7 @@ pip install ms-swift
 
 # Fine-tune with Zen identity
 swift sft \
-    --model_type qwen3-omni-30b-a3b \
+    --model_type zen-omni-30b \
     --model_id_or_path zenlm/zen-omni \
     --dataset zen_identity \
     --output_dir ./zen-omni-finetuned \
@@ -359,11 +359,11 @@ python web_demo_captioner.py --checkpoint-path zenlm/zen-omni --flash-attn2
   url={https://huggingface.co/zenlm/zen-omni}
 }
 
-@article{qwen3-omni,
-  title={Qwen3-Omni: Perceive, Think, and Generate with a Unified Omni Model},
-  author={Qwen Team},
+@misc{zen-omni,
+  title={Zen Omni: Perceive, Think, and Generate with a Unified Omni Model},
+  author={Zen LM Authors},
   year={2024},
-  url={https://github.com/QwenLM/Qwen3-Omni}
+  url={https://github.com/zenlm/zen-omni}
 }
 ```
 
