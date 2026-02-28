@@ -1,0 +1,44 @@
+### model
+# 30B MoE: requires multi-GPU or high-memory single GPU
+model_name_or_path: zenlm/zen-omni
+
+### method
+stage: sft
+do_train: true
+finetuning_type: lora
+lora_target: all
+lora_rank: 16
+lora_alpha: 32
+lora_dropout: 0.05
+
+### dataset
+dataset: identity
+dataset_dir: ./training/identity
+template: qwen3
+cutoff_len: 2048
+max_samples: 100
+overwrite_cache: true
+
+### output
+output_dir: ./training/output
+save_steps: 50
+logging_steps: 10
+plot_loss: true
+overwrite_output_dir: true
+
+### train
+per_device_train_batch_size: 1
+gradient_accumulation_steps: 16
+learning_rate: 1.0e-4
+num_train_epochs: 3
+lr_scheduler_type: cosine
+warmup_ratio: 0.1
+bf16: true
+# For 30B MoE enable gradient checkpointing to reduce VRAM
+gradient_checkpointing: true
+
+### eval
+val_size: 0.1
+per_device_eval_batch_size: 1
+eval_strategy: steps
+eval_steps: 50
