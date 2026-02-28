@@ -35,7 +35,7 @@ classifiers = [
     "Topic :: Multimedia :: Sound/Audio :: Speech",
     "Topic :: Multimedia :: Video",
 ]
-requires-python = ">=3.10"
+requires-python = ">=3.14"
 dependencies = [
     "torch>=2.0.0",
     "transformers>=4.40.0",
