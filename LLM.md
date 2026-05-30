@@ -7,7 +7,7 @@
 
 ## Project Overview
 
-Zen Omni is a hypermodal language model for translation and audio generation, built on Qwen3-Omni-30B-A3B. It is part of the Zen LM model family by Hanzo AI.
+Zen Omni is a hypermodal language model for translation and audio generation, built on -Omni-30B-A3B. It is part of the Zen LM model family by Hanzo AI.
 
 ### Key Specifications
 
@@ -132,7 +132,7 @@ Pipeline stages:
 
 ## Key Technologies
 
-- **Qwen3-Omni**: Base multimodal architecture
+- **-Omni**: Base multimodal architecture
 - **ms-swift**: ModelScope fine-tuning framework
 - **MuseTalk**: Neural lip synchronization (zen-dub)
 - **Whisper**: Audio feature extraction
@@ -180,7 +180,7 @@ All files reference the same knowledge base. Updates here propagate to all AI sy
 - pyproject.toml
 
 ### In Progress 🔄
-- Downloading Qwen3-Omni-30B-A3B-Instruct weights (~66GB)
+- Downloading -Omni-30B-A3B-Instruct weights (~66GB)
 
 ### Pending 📋
 - Identity fine-tuning execution
