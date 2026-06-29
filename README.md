@@ -1,3 +1,5 @@
+<p align="center"><img src=".github/hero.svg" alt="zen-omni" width="880"></p>
+
 ---
 license: apache-2.0
 language:
