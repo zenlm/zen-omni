@@ -15,7 +15,7 @@ jobs:
       issues: write
       discussions: write
       pull-requests: write
-    runs-on: ubuntu-latest
+    runs-on: zenlm-build-linux-amd64
     steps:
       - uses: actions/checkout@v3
       - uses: lizheming/github-translate-action

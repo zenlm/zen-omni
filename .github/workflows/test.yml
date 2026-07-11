@@ -8,7 +8,7 @@ on:
 
 jobs:
   test:
-    runs-on: ubuntu-latest
+    runs-on: zenlm-build-linux-amd64
     strategy:
       matrix:
         python-version: ["3.14"]
