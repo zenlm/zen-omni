@@ -2,6 +2,7 @@
 
 ---
 license: apache-2.0
+base_model: Qwen/Qwen3-Omni-30B-A3B-Instruct
 language:
 - en
 - zh
@@ -34,6 +35,8 @@ pipeline_tag: image-text-to-text
 **Hypermodal Language Model for Translation + Audio Generation**
 
 > Part of the [Zen LM](https://zenlm.org) family - democratizing AI while protecting our planet.
+
+Fine-tuned from [Qwen/Qwen3-Omni-30B-A3B-Instruct](https://huggingface.co/Qwen/Qwen3-Omni-30B-A3B-Instruct) (apache-2.0, Alibaba Qwen) with Hanzo identity training and abliteration.
 
 ## Model Specifications
 
@@ -276,7 +279,7 @@ result.save("output_english_dubbed.mp4")
 
 ## Training
 
-Fine-tuned from the Zen Omni 30B MoE base with:
+Fine-tuned from [Qwen/Qwen3-Omni-30B-A3B-Instruct](https://huggingface.co/Qwen/Qwen3-Omni-30B-A3B-Instruct) (apache-2.0, Alibaba Qwen) with:
 - Multimodal instruction tuning
 - Cross-modal alignment
 - Zen AI identity training (LoRA)
@@ -352,10 +355,10 @@ python web_demo_captioner.py --checkpoint-path zenlm/zen-omni --flash-attn2
 ## Citation
 
 ```bibtex
-@misc{zen-omni-2024,
+@misc{zen-omni-2025,
   title={Zen Omni: Hypermodal Language Model for Translation and Audio Generation},
   author={Zen LM Team and Hanzo AI},
-  year={2024},
+  year={2025},
   url={https://huggingface.co/zenlm/zen-omni}
 }
 
