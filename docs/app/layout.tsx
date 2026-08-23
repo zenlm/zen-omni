@@ -1,7 +1,5 @@
 import "./global.css"
 import { RootProvider } from "fumadocs-ui/provider/next"
-import { ZenSans } from "@hanzo/font/sans"
-import { ZenMono } from "@hanzo/font/mono"
 import type { ReactNode } from "react"
 
 export const metadata = {
@@ -17,7 +15,6 @@ export default function Layout({ children }: { children: ReactNode }) {
   return (
     <html
       lang="en"
-      className={`${ZenSans.variable} ${ZenMono.variable}`}
       suppressHydrationWarning
     >
       <body className="min-h-svh bg-background font-sans antialiased">

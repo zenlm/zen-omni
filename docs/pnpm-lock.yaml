@@ -8,9 +8,9 @@ importers:
 
   .:
     dependencies:
-      '@hanzo/font':
-        specifier: ^1.8.1
-        version: 1.8.2(next@16.0.1(react-dom@19.2.0(react@19.2.0))(react@19.2.0))
+      '@hanzo/design':
+        specifier: ^0.5.21
+        version: 0.5.21
       fumadocs-core:
         specifier: ^15.8.5
         version: 15.8.5(@types/react@19.2.4)(lucide-react@0.468.0(react@19.2.0))(next@16.0.1(react-dom@19.2.0(react@19.2.0))(react@19.2.0))(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
@@ -250,10 +250,9 @@ packages:
   '@formatjs/intl-localematcher@0.6.2':
     resolution: {integrity: sha512-XOMO2Hupl0wdd172Y06h6kLpBz6Dv+J4okPLl4LPtzbr8f66WbIoy4ev98EBuZ6ZK4h5ydTN6XneT4QVpD7cdA==}
 
-  '@hanzo/font@1.8.2':
-    resolution: {integrity: sha512-Ag9gldPYdVoBn7sXIyXFf7GQtruW2hbs8UDwFPmr1JQX78V8n9wcFrwrRVySkepAb3DrJZ2VQ7Lj3gy1yRqq9Q==}
-    peerDependencies:
-      next: '>=13.2.0'
+  '@hanzo/design@0.5.21':
+    resolution: {integrity: sha512-E2g6DZCn2IUf2AQKqPMwlVV5fz2wvIpAagFRLx33gIsJfmpyubFnx0LINjFs7UoMI1ajnwSa73k7rPteVSemUw==}
+    hasBin: true
 
   '@img/colour@1.0.0':
     resolution: {integrity: sha512-A5P/LfWGFSl6nsckYtjw9da+19jB8hkJ6ACTGcDfEJ0aE+l2n2El7dsVM7UVHZQ9s2lmYMWlrS21YLy2IR1LUw==}
@@ -2063,9 +2062,7 @@ snapshots:
     dependencies:
       tslib: 2.8.1
 
-  '@hanzo/font@1.8.2(next@16.0.1(react-dom@19.2.0(react@19.2.0))(react@19.2.0))':
-    dependencies:
-      next: 16.0.1(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
+  '@hanzo/design@0.5.21': {}
 
   '@img/colour@1.0.0':
     optional: true
